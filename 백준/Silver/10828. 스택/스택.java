@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-	
+	//스택 구현 후입선출
 	public static int[] stack; 
 	public static int count = 0;
 	public static void main(String[] args) throws IOException {
@@ -15,11 +15,11 @@ public class Main {
         
         int a = Integer.parseInt(br.readLine());
     	stack = new int[a];
-    	while(a-- >0) {
+    	while(a-- >0) {  //입력값 a만큼 반복
         		
     		st = new StringTokenizer(br.readLine(), " ");
             	
-    		switch(st.nextToken()) {
+    		switch(st.nextToken()) { //동작에 맞는 함수 실행
     		case "push":
     			push(Integer.parseInt(st.nextToken()));
     			break;
@@ -43,13 +43,13 @@ public class Main {
     		}
     	System.out.println(sb);
     	}
-	public static void push(int item) {
-		stack[count] = item;
+	public static void push(int item) { //push
+		stack[count] = item;            //값 입력
 		count ++;
 	}
-	public static int pop() {
-		if(count == 0) {
-			return -1;
+	public static int pop() {           //마지막 값 뽑아서 리턴
+		if(count == 0) {                //만약 스택이 비어있으면
+			return -1;                  //-1 리턴
 		}
 		else {
 			int output = stack[count-1];
@@ -58,21 +58,21 @@ public class Main {
 			return output;
 		}
 	}
-	public static int size() {
+	public static int size() {           //스택 크기 리턴
 		return count;
 		
 	}
-	public static int empty() {
-		if(count == 0) {
+	public static int empty() {          //스택이 비어있으면
+		if(count == 0) {                 // 1 리턴
 			return 1;
 		}
-		else {
+		else {                           //아니면 0 리턴
 			return 0;
 		}
 		
 	}
-	public static int top() {
-		if(count == 0) {
+	public static int top() {            //마지막 값 리턴
+		if(count == 0) {                 //비어있으면 -1 리턴
 			return -1;
 		}
 		else {
