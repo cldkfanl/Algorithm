@@ -26,19 +26,18 @@ int main()
 
     int N, M, K;
     cin >> N >> M >> K;
-    int fir = K / M; 
-    int sec = K % M;
-
-    int fx = fir + 1;
-    int fy = sec;
-
-    int sx = N - fir;
-    int sy = M - sec + 1;
+    int fir = K / M;     //1
+    int sec = K % M;     //3
 
     if (K == 0) {
-        cout << cntDP(N, M);
+        cout << cntDP(N, M) << endl;;
     }
     else {
+        int fx, fy, sx, sy;
+        fx = K / M + (K % M > 0 ? 1 : 0);
+        fy = K - (fx - 1) * M;
+        sx = N - fx + 1;
+        sy = M - fy + 1;
         cout << cntDP(fx, fy) * cntDP(sx, sy) << endl;
     }
 
