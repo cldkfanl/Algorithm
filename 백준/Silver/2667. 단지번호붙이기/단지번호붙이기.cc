@@ -15,8 +15,8 @@ void dfs(int x, int y) {
         int nx = x + fx[i];
         int ny = y + fy[i];
         if (nx >= 0 && ny >= 0 && nx < N && ny < N && !flag[nx][ny] && arr[nx][ny] == 1) {
-            nowcnt++;
             dfs(nx, ny);
+            nowcnt++;
         }
     }
 }
