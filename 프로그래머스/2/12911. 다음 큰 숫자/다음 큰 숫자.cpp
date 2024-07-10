@@ -14,7 +14,6 @@ int bitcnt(int num){
     return cnt;
 }
 
-
 int solution(int n) {
     int answer = 0;
     int ncnt = bitcnt(n);
