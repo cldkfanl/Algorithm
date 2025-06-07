@@ -19,17 +19,16 @@ int main()
     int tmp, start = 0, end = 0;
     for (int i = 0; i < L; i++) {
         cin >> tmp;
-        vec_s.push_back(tmp);
+        vec_s.emplace_back(tmp);
     }
     sort(vec_s.begin(), vec_s.end());
     cin >> n;
 
-    for (int i = 0; i < L; i++) {
-        if (vec_s[i] == n) {
-            cout << 0;
-            return 0;
-        }
+    if (binary_search(vec_s.begin(), vec_s.end(), n)) {
+        cout << 0;
+        return 0;
     }
+
     for(int i=0; i<L; i++){
         if (vec_s[i] > n) {
             end = vec_s[i] - 1;
